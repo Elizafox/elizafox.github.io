@@ -1,0 +1,118 @@
+:root {
+  /* Core palette */
+  --bg: #faf7fb;
+  --fg: #0e0b14;
+  --muted: #5e5a6b;
+
+  --accent: #7a4cff;
+  --accent-soft: #e6dcff;
+
+  --border: rgba(0,0,0,0.12);
+}
+
+/* Dark mode, automatic */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0a10;
+    --fg: #f1eef9;
+    --muted: #a7a3b8;
+
+    --accent: #9b7dff;
+    --accent-soft: rgba(155,125,255,0.15);
+
+    --border: rgba(255,255,255,0.14);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  padding: 4rem 1.25rem;
+
+  font-family: Helvetica, Arial, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+
+  color: var(--fg);
+  background: var(--bg);
+
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Typography */
+
+h1, h2, h3 {
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin: 0.75rem 0 1.25rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Links */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+a:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Lists */
+
+ul {
+  padding-left: 1.25rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+/* Subtle divider */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3rem 0;
+}
+
+/* Selection styling because we are not animals */
+
+::selection {
+  background: var(--accent-soft);
+}
+
+/* Accessibility sanity */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
